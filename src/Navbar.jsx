@@ -3,15 +3,21 @@ import { Link } from "react-router-dom";
 function Navbar() {
   return (
     <nav>
-      <ul>
-        <li>
-          <Link to="/">Grid</Link>
+      <ul className="flex">
+        <li className="m-24">
+          <Link to="/" className="text-5xl ">
+            Grid
+          </Link>
         </li>
-        <li>
-          <Link to="/list">List</Link>
+        <li className="m-24">
+          <Link to="/list" className="text-5xl ">
+            List
+          </Link>
         </li>
-        <li>
-          <Link to="/fav">Favs</Link>
+        <li className="m-24">
+          <Link to="/fav" className="text-5xl ">
+            Favs
+          </Link>
         </li>
       </ul>
     </nav>

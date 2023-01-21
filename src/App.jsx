@@ -47,7 +47,7 @@ function App() {
           ></Route>
           <Route
             path="/pokemon/:name"
-            element={<PokemonCard list={list} />} // only fav pokemons
+            element={<PokemonCard list={list} />}
           ></Route>
         </Routes>
       </Router>

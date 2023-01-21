@@ -4,16 +4,23 @@ import "./App.css";
 
 function PokemonGrid({ list }) {
   return (
-    <div className="list-container" style={{ width: "100px", height: "100px" }}>
+    <div className="flex flex-wrap m-5">
       {list.map(({ id, name }) => (
         <Link
           key={id}
           to={`/pokemon/${name}`}
-          style={{
-            backgroundImage: `url(${`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`})`,
-          }}
+          // style={{
+          //   backgroundImage: `url(${`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`})`,
+          // }}
         >
-          <div>{name}</div>
+          <div className="w-36 h-56 bg-slate-300 flex items-center justify-center rounded m-2">
+            <img
+              className="inline-block bg-white rounded"
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+              alt=""
+            />
+          </div>
+          {name}
         </Link>
       ))}
     </div>
