@@ -7,11 +7,15 @@ function PokemonCard({ list }) {
   const id = list.find((pokemon) => pokemon.name === name).id;
 
   return (
-    <img
-      key={id}
-      src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
-      alt=""
-    />
+    <div key={id} className="flex h-screen">
+      <div className="m-auto">
+        <img
+          className="logo react  scale-150"
+          src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
+          alt=""
+        />
+      </div>
+    </div>
   );
 }
 
