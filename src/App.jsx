@@ -1,64 +1,78 @@
 import { useState, useEffect } from "react";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { usePaginationFetch } from "./usePaginationfetch";
 import PokemonList from "./PokemonList";
 import PokemonGrid from "./PokemonGrid";
 import Navbar from "./Navbar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import PokemonCard from "./PokemonCard";
 import PokemonFavs from "./PokemonFavs";
 import LoadingSpinner from "./LoadingSpinner";
+import "./App.css";
+
+const getUrl = (page, pageSize) =>
+  `https://pokeapi.co/api/v2/pokemon?limit=${pageSize}&offset=${
+    page * pageSize
+  }`;
+
+const mapResults = ({ results }) =>
+  results.map(({ url, name }) => ({
+    url,
+    name,
+    id: url.match(/\/(\d+)\//)[1],
+  }));
 
 function App() {
-  const [list, setList] = useState([]);
-  const [isLoading, setLoading] = useState(true);
+  const {
+    loading,
+    results: pokemonList,
+    page,
+    setPage,
+    nextPage,
+    previousPage,
+  } = usePaginationFetch(getUrl, mapResults);
 
-  function parse(results) {
-    const pokemon_list = results.map(({ url, name, id }) => ({
-      url,
-      name,
-      id: url.match(/pokemon\/(\d+)\//)[1],
-    }));
-    return pokemon_list;
-  }
-
-  useEffect(() => {
-    fetch("https://pokeapi.co/api/v2/pokemon?limit=50&offset=0", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setList(parse(data.results));
-        setLoading(false);
-      })
-      .catch((error) => console.error(error));
-  }, []);
-
-  if (isLoading) {
+  if (loading) {
     return <LoadingSpinner></LoadingSpinner>;
   } else {
     return (
       <div className="App">
         <Router>
           <Navbar />
+          {/* {results.results.map((result) => (
+            <div key={result.name}>{result.name}</div>
+          ))} */}
           <Routes>
-            <Route exact path="/" element={<PokemonGrid list={list} />}></Route>
+            <Route
+              exact
+              path="/"
+              element={
+                <PokemonGrid
+                  pokemonList={pokemonList}
+                  page={page}
+                  nextPage={nextPage}
+                  previousPage={previousPage}
+                />
+              }
+            ></Route>
             <Route
               exact
               path="/list"
-              element={<PokemonList list={list} />}
+              element={
+                <PokemonList
+                  pokemonList={pokemonList}
+                  page={page}
+                  setPage={setPage}
+                  nextPage={nextPage}
+                  previousPage={previousPage}
+                />
+              }
             ></Route>
             <Route
               exact
               path="/fav"
-              element={<PokemonFavs list={list} />} // only fav pokemons
+              element={<PokemonFavs />} // only fav pokemons
             ></Route>
-            <Route
-              path="/pokemon/:name"
-              element={<PokemonCard list={list} />}
-            ></Route>
+            <Route path="/pokemon/:name" element={<PokemonCard />}></Route>
           </Routes>
         </Router>
       </div>
