@@ -1,79 +1,63 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import star from "./assets/star.svg";
+import { compareArrays } from "./tools/compareArrays.js";
+import { toggleArrayElement } from "./tools/toggleArrays";
+import Pagination from "./Pagination";
 import star_solid from "./assets/star_solid.svg";
+import star from "./assets/star.svg";
 import "./App.css";
 
-function PokemonGrid({ list }) {
+function PokemonFavs({}) {
   const [favsArray, setFavs] = useState(
     JSON.parse(localStorage.getItem("Favs")) || []
   );
 
-  const [modifiedList, setModifiedList] = useState([]);
-
-  // useEffect to load Initial State
-  useEffect(() => {
-    setModifiedList(compareArrays(list, favsArray));
-    console.log(modifiedList);
-    console.log(list);
-    console.log(favsArray);
-  }, []);
-
   function toggleArrayElement(element) {
-    const index = favsArray.indexOf(element);
+    const newFavsArray = favsArray.slice();
+    const index = newFavsArray.indexOf(element);
 
     if (index === -1) {
-      favsArray.push(element);
+      newFavsArray.push(element);
     } else {
-      favsArray.splice(index, 1);
+      newFavsArray.splice(index, 1);
     }
 
     localStorage.setItem("Favs", JSON.stringify(favsArray));
-    return favsArray;
-  }
-
-  function compareArrays(arr1, arr2) {
-    return arr1.map((el1) => {
-      let match = arr2.find((el2) => el1.id === el2);
-      return { ...el1, match: match ? true : false };
-    });
+    return newFavsArray;
   }
 
   const handleFavorite = (event) => {
     event.preventDefault();
     const parentDiv = event.target.closest(".Pokemon");
     setFavs(toggleArrayElement(parentDiv.id));
-    setModifiedList(compareArrays(modifiedList, favsArray));
   };
 
   return (
-    <div className="flex flex-wrap m-5">
-      {modifiedList.map(
-        ({ id, name, match }) =>
-          match && (
-            <Link className="Pokemon" id={id} key={id} to={`/pokemon/${name}`}>
-              <div className="relative w-36 h-56 bg-slate-300 flex items-center justify-center rounded m-2">
-                <div className="absolute top-0 right-0">
-                  <img
-                    className="w-4 text-gray-500 mr-1 mt-1"
-                    onClick={handleFavorite}
-                    src={match ? star_solid : star}
-                    alt=""
-                  />
-                </div>
+    <div>
+      <div className="flex flex-wrap m-5 place-content-center">
+        {favsArray.map((id) => (
+          <Link className="Pokemon" id={id} key={id} to={`/list`}>
+            <div className="relative w-36 h-56 bg-slate-300 flex items-center justify-center hover:-mt-1 rounded m-2">
+              <div className="absolute top-0 right-0">
                 <img
-                  className="inline-block rounded"
-                  src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
+                  className="w-4 mr-1 mt-1"
+                  onClick={handleFavorite}
+                  src={star_solid}
                   alt=""
                 />
               </div>
-
-              {name}
-            </Link>
-          )
-      )}
+              <img
+                className="inline-block rounded"
+                src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
+                alt=""
+              />
+            </div>
+          </Link>
+        ))}
+      </div>
+      {/* <Pagination page={page} nextPage={nextPage} previousPage={previousPage} /> */}
     </div>
   );
 }
 
-export default PokemonGrid;
+export default PokemonFavs;

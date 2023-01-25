@@ -1,10 +1,11 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import star from "./assets/star.svg";
+import Pagination from "./Pagination";
 import star_solid from "./assets/star_solid.svg";
+import star from "./assets/star.svg";
 import "./App.css";
 
-function PokemonList({ list }) {
+function PokemonList({ pokemonList, page, nextPage, previousPage }) {
   const [favsArray, setFavs] = useState(
     JSON.parse(localStorage.getItem("Favs")) || []
   );
@@ -13,10 +14,7 @@ function PokemonList({ list }) {
 
   // useEffect to load Initial State
   useEffect(() => {
-    setModifiedList(compareArrays(list, favsArray));
-    console.log(modifiedList);
-    console.log(list);
-    console.log(favsArray);
+    setModifiedList(compareArrays(pokemonList, favsArray));
   }, []);
 
   function toggleArrayElement(element) {
@@ -52,19 +50,19 @@ function PokemonList({ list }) {
         <Link className="Pokemon" id={id} key={id} to={`/pokemon/${name}`}>
           <div
             key={id}
-            className="flex justify-between bg-slate-100 rounded my-4"
+            className="flex justify-between bg-slate-300 hover:-mr-4 hover:-ml-4  rounded my-4"
           >
             <img
               className="ml-5 w-24"
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
               alt=""
             />
-            <div className="flex items-center text-cyan-600 text-2xl">
+            <div className="flex items-center text-black text-2xl">
               {"#" + id + " "}
-              {name}
+              {name.charAt(0).toUpperCase() + name.slice(1)}
             </div>
             <img
-              className=" w-5 text-yellow-400 mr-5 mt-1" // color not working
+              className="w-5 text-yellow-400 mr-5 mt-1" // color not working
               onClick={handleFavorite}
               src={match ? star_solid : star}
               alt=""
@@ -72,6 +70,7 @@ function PokemonList({ list }) {
           </div>
         </Link>
       ))}
+      <Pagination page={page} nextPage={nextPage} previousPage={previousPage} />
     </div>
   );
 }
