@@ -3,10 +3,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { usePaginationFetch } from "./usePaginationfetch";
 import PokemonList from "./PokemonList";
 import PokemonGrid from "./PokemonGrid";
-import Navbar from "./Navbar";
 import PokemonCard from "./PokemonCard";
 import PokemonFavs from "./PokemonFavs";
-import LoadingSpinner from "./LoadingSpinner";
+import Loading from "./Loading";
 import "./App.css";
 
 const getUrl = (page, pageSize) =>
@@ -22,6 +21,14 @@ const mapResults = ({ results }) =>
   }));
 
 function App() {
+  useEffect(() => {
+    const colorScheme = window.matchMedia("(prefers-color-scheme: dark)")
+      .matches
+      ? "dark"
+      : "light";
+    document.documentElement.classList.add(colorScheme);
+  }, []);
+
   const {
     loading,
     results: pokemonList,
@@ -32,15 +39,11 @@ function App() {
   } = usePaginationFetch(getUrl, mapResults);
 
   if (loading) {
-    return <LoadingSpinner></LoadingSpinner>;
+    return <Loading />;
   } else {
     return (
       <div className="App">
         <Router>
-          <Navbar />
-          {/* {results.results.map((result) => (
-            <div key={result.name}>{result.name}</div>
-          ))} */}
           <Routes>
             <Route
               exact
@@ -72,7 +75,10 @@ function App() {
               path="/fav"
               element={<PokemonFavs />} // only fav pokemons
             ></Route>
-            <Route path="/pokemon/:name" element={<PokemonCard />}></Route>
+            <Route
+              path="/pokemon/:name"
+              element={<PokemonCard pokemonList={pokemonList} />}
+            ></Route>
           </Routes>
         </Router>
       </div>
