@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const useApi = (url, mapResults = (result) => result) => {
+const useFetch = (url, mapResults = (result) => result) => {
   const [data, setData] = useState();
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -17,4 +17,4 @@ const useApi = (url, mapResults = (result) => result) => {
   return { data, loading };
 };
 
-export { useApi };
+export { useFetch };
