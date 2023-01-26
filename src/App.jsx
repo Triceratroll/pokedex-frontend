@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { usePaginationFetch } from "./hooks/usePaginationfetch";
 import PokemonList from "./components/PokemonList";
 import PokemonGrid from "./components/PokemonGrid";
-import PokemonCard from "./components/PokemonCard";
+import PokemonDetail from "./components/PokemonDetail";
 import PokemonFavs from "./components/PokemonFavs";
 import Loading from "./components/II_level/Loading";
+import Header from "./components/II_level/Header";
+
 import "./App.css";
 
 const getUrl = (page, pageSize) =>
@@ -44,6 +46,7 @@ function App() {
     return (
       <div className="App">
         <Router>
+          <Header />
           <Routes>
             <Route
               exact
@@ -64,7 +67,6 @@ function App() {
                 <PokemonList
                   pokemonList={pokemonList}
                   page={page}
-                  setPage={setPage}
                   nextPage={nextPage}
                   previousPage={previousPage}
                 />
@@ -77,7 +79,7 @@ function App() {
             ></Route>
             <Route
               path="/pokemon/:name"
-              element={<PokemonCard pokemonList={pokemonList} />}
+              element={<PokemonDetail pokemonList={pokemonList} />}
             ></Route>
           </Routes>
         </Router>
