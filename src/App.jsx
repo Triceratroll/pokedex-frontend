@@ -5,7 +5,7 @@ import PokemonList from "./components/PokemonList";
 import PokemonGrid from "./components/PokemonGrid";
 import PokemonCard from "./components/PokemonCard";
 import PokemonFavs from "./components/PokemonFavs";
-import Loading from "./components/Loading";
+import Loading from "./components/II_level/Loading";
 import "./App.css";
 
 const getUrl = (page, pageSize) =>

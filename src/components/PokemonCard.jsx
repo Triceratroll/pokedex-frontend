@@ -1,7 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
-import Loading from "./Loading";
-import PokemonStats from "./PokemonStats";
+import Loading from "./II_level/Loading";
+import PokemonStats from "./II_level/PokemonStats";
 import chevron_left from "../assets/circle-chevron-left-solid.svg";
 import chevron_right from "../assets/circle-chevron-right-solid.svg";
 import arrow_left from "../assets/arrow-left-solid.svg";

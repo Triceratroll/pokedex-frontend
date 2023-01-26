@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Pagination from "./Pagination";
+import Pagination from "./II_level/Pagination";
+import Navbar from "./II_level/Navbar";
 import star_solid from "../assets/star_solid.svg";
 import star from "../assets/star.svg";
-import Navbar from "./Navbar";
 import "../App.css";
 
 function PokemonList({ pokemonList, page, nextPage, previousPage }) {

@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import moon from "../assets/circle-half-stroke-solid.svg";
-import "../App.css";
+import circle_half from "../../assets/circle-half-stroke-solid.svg";
+import "../../App.css";
 
 function Navbar() {
   const handleDark = () => {
@@ -26,7 +26,7 @@ function Navbar() {
           <button className="w-44 border-hidden mx-5">Favorites</button>
         </NavLink>
         <img
-          src={moon}
+          src={circle_half}
           alt=""
           className="hover:cursor-pointer mx-5 w-6"
           onClick={handleDark}

@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { compareArrays } from "../tools/compareArrays.js";
 import { toggleArrayElement } from "../tools/toggleArrays";
 import { usePaginationFetch } from "../hooks/usePaginationfetch";
-import Navbar from "./Navbar.jsx";
 import star_solid from "../assets/star_solid.svg";
-import Loading from "./Loading.jsx";
+import Navbar from "./II_level/Navbar";
+import Loading from "./II_level/Loading";
 import "../App.css";
 
 const getUrl = (page, pageSize) =>
