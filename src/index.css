@@ -19,6 +19,24 @@
   -webkit-text-size-adjust: 100%;
 }
 
+:root.light {
+  color: #213547;
+  background-color: #ffffff;
+}
+
+:root.light button {
+  background-color: #f0f0f0;
+}
+
+:root.dark {
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+}
+
+:root.dark button {
+  background-color: #1a1a1a;
+}
+
 body {
   margin: 0;
   display: flex;
@@ -59,6 +77,6 @@ button:focus-visible {
     color: #747bff;
   }
   button {
-    background-color: #f9f9f9;
+    background-color: #f0f0f0;
   }
 }
