@@ -5,6 +5,7 @@ import PokemonStats from "./II_level/PokemonStats";
 import chevron_left from "../assets/circle-chevron-left-solid.svg";
 import chevron_right from "../assets/circle-chevron-right-solid.svg";
 import arrow_left from "../assets/arrow-left-solid.svg";
+import pokedex from "../assets/pokedex.png";
 import "../App.css";
 
 function PokemonCard({ pokemonList }) {
@@ -28,54 +29,59 @@ function PokemonCard({ pokemonList }) {
   );
 
   return (
-    <div className="relative">
-      <div className="flex justify-between">
-        <Link className="my-auto" to={"/"}>
-          <img className="w-8" src={arrow_left} alt="" />
-        </Link>
-        <div
-          className={`w-32 text-2xl border-2 rounded skewed dropshadow pokemon-type-${type.name}`}
-        >
-          {"#" + pokemon.id}
-        </div>
-        <div className="text-3xl">{firstCase(pokemon.name)}</div>
-        <div className="text-3xl text-red-700">
-          {pokemon.stats[0].base_stat +
-            " " +
-            pokemon.stats[0].stat.name.toUpperCase()}
-        </div>
-      </div>
-      <div className="flex justify-center">
+    <div className="flex my-5">
+      <div className="my-auto mr-24">
         {previous && (
-          <Link className="my-auto" to={`/pokemon/${previous.name}`}>
+          <Link to={`/pokemon/${previous.name}`}>
             <img className="w-10" src={chevron_left} alt="" />
           </Link>
         )}
+      </div>
+      <div
+        className={`relative border-2 rounded dropshadow pokemon-type-${type.name}`}
+      >
+        <div className="flex justify-between">
+          <div
+            className={`w-24 pt-2 text-2xl  border-2 rounded dropshadow pokemon-type-${type.name}`}
+          >
+            {"#" + pokemon.id}
+          </div>
+          <div className="text-2xl m-2 font-bold">
+            {firstCase(pokemon.name)}
+          </div>
+          <div className="text-2xl m-2 font-bold text-red-700">
+            {pokemon.stats[0].base_stat +
+              " " +
+              pokemon.stats[0].stat.name.toUpperCase()}
+          </div>
+        </div>
         <img
-          className={`logo pokemon-type-${type.name}`}
+          className={`w-80 m-auto logo pokemon-type-${type.name}`}
           src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png`}
           alt=""
         />
+        <PokemonStats
+          pokemon={pokemon}
+          type={type}
+          normalAbility={
+            normalAbility
+              ? firstCase(formatName(normalAbility.ability.name))
+              : undefined
+          }
+          hiddenAbility={
+            hiddenAbility
+              ? firstCase(formatName(hiddenAbility.ability.name))
+              : undefined
+          }
+        />
+      </div>
+      <div className="my-auto ml-24">
         {next && (
-          <Link className="my-auto" to={`/pokemon/${next.name}`}>
+          <Link to={`/pokemon/${next.name}`}>
             <img className="w-10" src={chevron_right} alt="" />
           </Link>
         )}
       </div>
-      <PokemonStats
-        pokemon={pokemon}
-        type={type}
-        normalAbility={
-          normalAbility
-            ? firstCase(formatName(normalAbility.ability.name))
-            : undefined
-        }
-        hiddenAbility={
-          hiddenAbility
-            ? firstCase(formatName(hiddenAbility.ability.name))
-            : undefined
-        }
-      />
     </div>
   );
 }
