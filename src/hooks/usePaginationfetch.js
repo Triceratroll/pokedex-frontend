@@ -4,7 +4,7 @@ const usePaginationFetch = (getUrl, mapResults = (result) => result) => {
   const [page, setPage] = useState(0);
   const [loading, setLoading] = useState(true);
   const [results, setResults] = useState([]);
-  const pageSize = 10;
+  const pageSize = 12;
 
   useEffect(() => {
     setLoading(true);
