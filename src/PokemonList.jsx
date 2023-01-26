@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Pagination from "./Pagination";
 import star_solid from "./assets/star_solid.svg";
 import star from "./assets/star.svg";
+import Navbar from "./Navbar";
 import "./App.css";
 
 function PokemonList({ pokemonList, page, nextPage, previousPage }) {
@@ -45,16 +46,17 @@ function PokemonList({ pokemonList, page, nextPage, previousPage }) {
   };
 
   return (
-    <div className="">
+    <div>
+      <Navbar />
       {modifiedList.map(({ id, name, match }) => (
         <Link className="Pokemon" id={id} key={id} to={`/pokemon/${name}`}>
           <div
             key={id}
-            className="flex justify-between bg-slate-300 hover:-mr-4 hover:-ml-4  rounded my-4"
+            className="flex justify-between bg-indigo-300 hover:-mr-4 hover:-ml-4  rounded my-4"
           >
             <img
               className="ml-5 w-24"
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${id}.png`}
+              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
               alt=""
             />
             <div className="flex items-center text-black text-2xl">
