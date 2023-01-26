@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { compareArrays } from "./tools/compareArrays.js";
-import { toggleArrayElement } from "./tools/toggleArrays";
-import { usePaginationFetch } from "./usePaginationfetch";
+import { compareArrays } from "../tools/compareArrays.js";
+import { toggleArrayElement } from "../tools/toggleArrays";
+import { usePaginationFetch } from "../hooks/usePaginationfetch";
 import Navbar from "./Navbar.jsx";
-import star_solid from "./assets/star_solid.svg";
+import star_solid from "../assets/star_solid.svg";
 import Loading from "./Loading.jsx";
-import "./App.css";
+import "../App.css";
 
 const getUrl = (page, pageSize) =>
   `https://pokeapi.co/api/v2/pokemon?limit=1000&offset=0

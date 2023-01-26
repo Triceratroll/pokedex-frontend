@@ -1,15 +1,15 @@
 import { Link, useParams } from "react-router-dom";
-import { useApi } from "./useApi";
+import { useFetch } from "../hooks/useFetch";
 import Loading from "./Loading";
 import PokemonStats from "./PokemonStats";
-import chevron_left from "./assets/circle-chevron-left-solid.svg";
-import chevron_right from "./assets/circle-chevron-right-solid.svg";
-import arrow_left from "./assets/arrow-left-solid.svg";
-import "./App.css";
+import chevron_left from "../assets/circle-chevron-left-solid.svg";
+import chevron_right from "../assets/circle-chevron-right-solid.svg";
+import arrow_left from "../assets/arrow-left-solid.svg";
+import "../App.css";
 
 function PokemonCard({ pokemonList }) {
   const { name } = useParams();
-  const { data: pokemon, loading } = useApi(
+  const { data: pokemon, loading } = useFetch(
     `https://pokeapi.co/api/v2/pokemon/${name}`
   );
   const firstCase = (name) => name.charAt(0).toUpperCase() + name.slice(1);

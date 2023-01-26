@@ -1,7 +1,6 @@
 import { NavLink } from "react-router-dom";
-import moon from "./assets/circle-half-stroke-solid.svg";
-
-import "./App.css";
+import moon from "../assets/circle-half-stroke-solid.svg";
+import "../App.css";
 
 function Navbar() {
   const handleDark = () => {

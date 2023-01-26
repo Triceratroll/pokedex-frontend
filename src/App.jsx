@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { usePaginationFetch } from "./usePaginationfetch";
-import PokemonList from "./PokemonList";
-import PokemonGrid from "./PokemonGrid";
-import PokemonCard from "./PokemonCard";
-import PokemonFavs from "./PokemonFavs";
-import Loading from "./Loading";
+import { usePaginationFetch } from "./hooks/usePaginationfetch";
+import PokemonList from "./components/PokemonList";
+import PokemonGrid from "./components/PokemonGrid";
+import PokemonCard from "./components/PokemonCard";
+import PokemonFavs from "./components/PokemonFavs";
+import Loading from "./components/Loading";
 import "./App.css";
 
 const getUrl = (page, pageSize) =>

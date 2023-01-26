@@ -1,12 +1,12 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { compareArrays } from "./tools/compareArrays.js";
-import { toggleArrayElement } from "./tools/toggleArrays";
+import { compareArrays } from "../tools/compareArrays.js";
+import { toggleArrayElement } from "../tools/toggleArrays";
 import Navbar from "./Navbar";
 import Pagination from "./Pagination";
-import star_solid from "./assets/star_solid.svg";
-import star from "./assets/star.svg";
-import "./App.css";
+import star_solid from "../assets/star_solid.svg";
+import star from "../assets/star.svg";
+import "../App.css";
 
 function PokemonGrid({ pokemonList, page, setPage, nextPage, previousPage }) {
   const [modifiedList, setModifiedList] = useState([]);
