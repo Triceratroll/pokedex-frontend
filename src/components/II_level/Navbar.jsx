@@ -1,5 +1,7 @@
 import { NavLink } from "react-router-dom";
-import circle_half from "../../assets/circle-half-stroke-solid.svg";
+import star_solid from "../../assets/star_solid.svg";
+import grid from "../../assets/grid-solid.svg";
+import list from "../../assets/list-solid.svg";
 import "../../App.css";
 
 function Navbar() {
@@ -14,24 +16,31 @@ function Navbar() {
   };
 
   return (
-    <nav>
-      <ul className="md:flex justify-center">
-        <NavLink to="/" className="text-2xl">
-          <button className="w-44 border-hidden mx-5">Grid view</button>
-        </NavLink>
-        <NavLink to="/list" className="text-2xl">
-          <button className="w-44 border-hidden mx-5">List view</button>
-        </NavLink>
-        <NavLink to="/fav" className="text-2xl">
-          <button className="w-44 border-hidden mx-5">Favorites</button>
-        </NavLink>
-        <img
-          src={circle_half}
-          alt=""
-          className="hover:cursor-pointer mx-5 w-6"
-          onClick={handleDark}
-        />
-      </ul>
+    <nav className="flex-col justify-center">
+      <NavLink to="/" className="text-xl">
+        <button className="w-44 border-hidden mx-5 my-2">
+          <span className="flex">
+            Grid View
+            <img src={grid} className="w-4 m-auto" alt="" />
+          </span>
+        </button>
+      </NavLink>
+      <NavLink to="/list" className="text-xl">
+        <button className="w-44 border-hidden mx-5 my-2">
+          <span className="flex">
+            List View
+            <img src={list} className="w-4 m-auto" alt="" />
+          </span>
+        </button>
+      </NavLink>
+      <NavLink to="/fav" className="text-xl">
+        <button className="w-44 border-hidden mx-5 my-2">
+          <span className="flex">
+            Favorites
+            <img src={star_solid} className="w-4 m-auto" alt="" />
+          </span>
+        </button>
+      </NavLink>
     </nav>
   );
 }

@@ -52,19 +52,19 @@ function PokemonList({ pokemonList, page, nextPage, previousPage }) {
         <Link className="Pokemon" id={id} key={id} to={`/pokemon/${name}`}>
           <div
             key={id}
-            className="flex justify-between bg-indigo-300 hover:-mr-4 hover:-ml-4  rounded my-4"
+            className="flex justify-between bg-indigo-300 hover:-mr-4 hover:-ml-4 rounded my-4"
           >
             <img
               className="ml-5 w-24"
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
               alt=""
             />
-            <div className="flex items-center text-black text-2xl">
+            <div className="flex items-center text-slate-800 text-2xl">
               {"#" + id + " "}
               {name.charAt(0).toUpperCase() + name.slice(1)}
             </div>
             <img
-              className="w-5 text-yellow-400 mr-5 mt-1" // color not working
+              className="w-6 text-yellow-400 mr-5 mt-1" // color not working
               onClick={handleFavorite}
               src={match ? star_solid : star}
               alt=""
