@@ -13,6 +13,12 @@
 .logo {
   filter: drop-shadow(0 0 2em var(--pokemon-type-color));
 }
+.shadow-yellow {
+  box-shadow: 0px 0px 3px 3px #fd3;
+}
+.dropshadow {
+  box-shadow: 0px 0px 3px 3px var(--pokemon-type-color);
+}
 
 @keyframes logo-spin {
   from {
@@ -33,8 +39,8 @@
   padding: 2em;
 }
 
-.read-the-docs {
-  color: #888;
+.skewed {
+  transform: skew(-10deg); /* Equal to skewX(10deg) */
 }
 
 .active {
