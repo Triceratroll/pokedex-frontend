@@ -4,11 +4,11 @@ Este es un problema común y API muy utilizada por lo que me ha resultado bastan
 
 He optado por realizar una app con el siguiente **Stack**:
 
-1. Vite : Me gusta mucho, creo que es una herramienta muy práctica y útil para desarrollar en frontend, siempre que se pueda. Ya la había utilizado antes, pero me ha ayudado consultar la guía de inicio https://vitejs.dev/guide/
-2. React : Creo que para este tipo de problema React es ideal y por eso lo he elegido. Ya la había utilizado antes, he ido consultando proyectos que ya había realizado y también he consultado respecto a los hooks https://beta.reactjs.org/reference/react/useContext
-3. Tailwind CSS : No la había utilizado y quería probarla por lo que he aprovechado. He consultado mucha de su documentación empezando por https://tailwindcss.com/docs/guides/vite#react
+1. **Vite** : Me gusta mucho, creo que es una herramienta muy práctica y útil para desarrollar en frontend, siempre que se pueda. Ya la había utilizado antes, pero me ha ayudado consultar la guía de inicio https://vitejs.dev/guide/
+2. **React** : Creo que para este tipo de problema React es ideal y por eso lo he elegido. Ya la había utilizado antes, he ido consultando proyectos que ya había realizado y también he consultado respecto a los hooks https://beta.reactjs.org/reference/react/useContext
+3. **Tailwind CSS** : No la había utilizado y quería probarla por lo que he aprovechado. He consultado mucha de su documentación empezando por https://tailwindcss.com/docs/guides/vite#react
 
-## Para ejecutar la solución
+## Para ejecutar la solución puedes
 
 ### 1. Clonar el repositorio
 
@@ -25,6 +25,8 @@ npm run dev
 ```
 
 ### 4. Ir a la dirección de desarrollo
+
+## O también puedes probar la app directamente [aquí](https://pokedex-triceratroll.netlify.app/)
 
 <br></br>
 
