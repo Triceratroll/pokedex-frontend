@@ -21,11 +21,11 @@ Se desarrollará una aplicación web en JavaScript utilizando la API pública Po
 - Tienes que gestionar una aplicación con dos vistas:
 
   - Una vista listado con la información resumida de los Pokemons.
+
     > ✔️ _La aplicación cuenta con una vista de lista, que nos presenta múltiples pokemons con una información resumida de cada uno._
-    > <br/><br/>
+
   - Una vista detalle con la información detallada del Pokemons seleccionado.
     > ✔️ _Cuando hacemos click sobre uno de los pokemons en la vista de lista, vamos a la vista detalle, en la que podemos encontrar más información del pokemon en concreto_
-    > <br/><br/>
 
 - ¡Cuidado! en la región de Sinnoh hay innumerables Pokemon, por lo que se recomienda
   paginar los resultados.
@@ -50,11 +50,11 @@ Además de los requisitos mínimos para la prueba, hemos definido una serie de b
 
 - Testing. No es imprescindible, pero si vienes con nosotros vas a tener que aprender a testear tu código, puede ser un buen momento para empezar.
 
-> No he realizado testing, le elección inicial de la herramineta de desarrollado Vite, era en parte también para hacer uso del framework de pruebas Vitest, finalmente no ha sido posible.\_
+> _No he realizado testing, le elección inicial de la herramineta de desarrollado Vite, era en parte también para hacer uso del framework de pruebas Vitest, finalmente no ha sido posible._
 
 - Variables CSS. CSS no es un lenguaje de programación pero existen técnicas que hacen el código CSS más mantenible.
 
-> _He elegido Tailwind CSS debido a este requisito, personalmente a mí me ha gustado mucho porque te deja mucha libertad, flexibilidad y a la vez tienes casi todos los estilos en el mismo sitio que tu código, en este caso en los ficheros .jsx. Aunque entiendo también que pueda parecer desordenado al tener tantos atributos y pueda hacer que el código sea menos legible. Si los usas con componentes creo que es genial. También he añadido alguna variable de CSS para los colores de los tipos de los Pokemons._
+> _✔️He elegido Tailwind CSS debido a este requisito, personalmente a mí me ha gustado mucho porque te deja mucha libertad, flexibilidad y a la vez tienes casi todos los estilos en el mismo sitio que tu código, en este caso en los ficheros .jsx. Aunque entiendo también que pueda parecer desordenado al tener tantos atributos y pueda hacer que el código sea menos legible. Si los usas con componentes creo que es genial. También he añadido alguna variable de CSS para los colores de los tipos de los Pokemons._
 
 - Typescript. Javascript no es un lenguaje tipado, Typescript ha venido para quedarse.
 
@@ -62,7 +62,7 @@ Además de los requisitos mínimos para la prueba, hemos definido una serie de b
 
 - Responsive Design. ¿Mobile, desktop o tablet? O mejor si funciona tu aplicación en todos ellos.
 
-> _He tenido en mente que sea responsive, en general se ajusta bastante bien y la funcionalidad es correcta, pero en dispositivos pequeños el diseño ya no es tan agradable a la vista_
+> _✔️He tenido en mente que sea responsive, en general se ajusta bastante bien y la funcionalidad es correcta, pero en dispositivos pequeños el diseño ya no es tan agradable a la vista_
 
 - Favoritos
 
