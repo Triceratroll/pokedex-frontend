@@ -24,9 +24,7 @@ npm install
 npm run dev
 ```
 
-### 4. Ir a la dirección de desarrollo
-
-## O también puedes probar la app directamente [aquí](https://pokedex-triceratroll.netlify.app/)
+### 4. Ir a la dirección de desarrollo o también puedes probar la app directamente [aquí](https://pokedex-triceratroll.netlify.app/)
 
 <br></br>
 
