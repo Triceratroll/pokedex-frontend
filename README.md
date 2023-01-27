@@ -8,11 +8,25 @@ He optado por realizar una app con el siguiente **Stack**:
 2. React : Creo que para este tipo de problema React es ideal y por eso lo he elegido. Ya la había utilizado antes, he ido consultando proyectos que ya había realizado y también he consultado respecto a los hooks https://beta.reactjs.org/reference/react/useContext
 3. Tailwind CSS : No la había utilizado y quería probarla por lo que he aprovechado. He consultado mucha de su documentación empezando por https://tailwindcss.com/docs/guides/vite#react
 
-Para ejecutar la solución:
+## Para ejecutar la solución:
 
-1. Clonar el repositorio
-2. Ejecutar en terminal `npm install`
-3. Ejecutar en terminal `npm run dev`
+### 1. Clonar el repositorio
+
+### 2. Instalar las dependencias
+
+```
+npm install
+```
+
+### 3. Ejecutar el entorno de desarrollo web
+
+```
+npm run dev
+```
+
+### 4. Ir a la dirección de desarrollo
+
+<br></br>
 
 # Requisitos mínimos de la prueba
 
