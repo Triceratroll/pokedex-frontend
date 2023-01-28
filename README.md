@@ -108,12 +108,12 @@ También los directorios:
 
 # Recursos que he utilizado y suelo utilizar
 
-### Stack Overflow
+ Stack Overflow
 
-### [Code Grepper](https://www.grepper.com/) : Extensión de navegador que te muestra snippets de código bajo la barra de búsqueda.
+ [Code Grepper](https://www.grepper.com/) : Extensión de navegador que te muestra snippets de código bajo la barra de búsqueda.
 
-### YT
+ Yotube
 
-### ChatGPT : Recientemente también lo estoy utilizando, para código en general creo que esta bastante bien, pero hay que saber que preguntar por lo menos y tamb vigilar de cerca. Para debugear a veces también me funciona muy bien, pasandole logs de error.
+ ChatGPT : Recientemente también lo estoy utilizando, para código en general creo que esta bastante bien, pero hay que saber que preguntar por lo menos y tamb vigilar de cerca. Para debugear a veces también me funciona muy bien, pasandole logs de error.
 
 ### [FontAwesome](https://fontawesome.com/search) : Para los iconos.
