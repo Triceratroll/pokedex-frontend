@@ -116,4 +116,4 @@ También los directorios:
 
  ChatGPT : Recientemente también lo estoy utilizando, para código en general creo que esta bastante bien, pero hay que saber que preguntar por lo menos y tamb vigilar de cerca. Para debugear a veces también me funciona muy bien, pasandole logs de error.
 
-### [FontAwesome](https://fontawesome.com/search) : Para los iconos.
+ [FontAwesome](https://fontawesome.com/search) : Para los iconos.
